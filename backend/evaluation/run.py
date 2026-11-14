@@ -33,7 +33,6 @@ from app.workflow import run_question
 from . import metrics
 from .corpus import BUILDERS, build_corpus
 
-
 DATA = Path(__file__).parent / "data"
 PDFS = Path(__file__).parent / "pdfs"
 

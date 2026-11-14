@@ -15,7 +15,6 @@ import re
 from app.textutils import STOPWORDS, canon, content_terms, direction_of, split_sentences
 from app.verifier import NLIScores
 
-
 _WORD = re.compile(r"[a-z0-9]+")
 _NEGATIONS = {"not", "never", "no", "cannot", "n't", "without"}
 

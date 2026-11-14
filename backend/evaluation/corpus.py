@@ -13,7 +13,6 @@ from pathlib import Path
 
 import pymupdf
 
-
 PAGE_W, PAGE_H = 595, 842
 MARGIN = 56
 

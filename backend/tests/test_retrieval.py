@@ -148,9 +148,8 @@ def test_rrf_prefers_items_ranked_high_in_both_lists():
 
 def test_bm25_works_in_a_two_chunk_document():
     """Regression: BM25Okapi gave non-positive scores for terms occurring in most chunks of a short document, so keyword search found nothing."""
-    from rank_bm25 import BM25Plus
-
     from app.retrieval import tokenize
+    from rank_bm25 import BM25Plus
 
     docs = ["The Lisbon office opened in 2019 and employs staff", "The Madrid office opened in 2021 and employs staff"]
     scores = BM25Plus([tokenize(d) for d in docs]).get_scores(tokenize("Lisbon office"))
