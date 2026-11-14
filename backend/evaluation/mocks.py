@@ -12,7 +12,13 @@ import json
 import math
 import re
 
-from app.textutils import STOPWORDS, canon, content_terms, direction_of, split_sentences
+from app.textutils import (
+    STOPWORDS,
+    canon,
+    content_terms,
+    direction_of,
+    split_sentences,
+)
 from app.verifier import NLIScores
 
 _WORD = re.compile(r"[a-z0-9]+")
@@ -43,6 +49,26 @@ _QUESTION_ALIASES = {
     "last": {"last", "period", "month", "year", "week"},
     "limit": {"limit", "exceed", "maximum"},
 }
+
+# Context that often indicates a comparison with earlier work,
+# rather than a direct answer about the subject of the question.
+_PRIOR_WORK_PATTERN = re.compile(
+    r"\b(prior|previous|earlier|existing|past)\s+"
+    r"(?:related\s+)?"
+    r"(work|study|studies|research|model|models)\b",
+    re.IGNORECASE,
+)
+
+# Direct relationships between a subject and a quantity.
+# Examples: "uses 3 million parameters", "has 20 layers".
+_DIRECT_QUANTITY_PATTERN = re.compile(
+    r"\b(using|uses|used|has|have|contains|requires|"
+    r"consists\s+of|comprises)\b"
+    r".{0,80}?"
+    r"\b(parameters?|layers?|epochs?|images?|"
+    r"tokens?|percent|percentage|million|billion)\b",
+    re.IGNORECASE,
+)
 
 
 def _normalized_terms(text: str) -> set[str]:
@@ -228,6 +254,22 @@ class ExtractiveMockLLM:
 
         question_groups = _question_groups(question)
 
+        # Preserve the original question words because some generic
+        # words, such as "many", are removed during normalization.
+        question_words = set(_WORD.findall(question.lower()))
+        question_terms = _normalized_terms(question)
+
+        numeric_question = bool(
+            question_words
+            & {"many", "much", "number", "count", "amount"}
+            or question_terms
+            & {
+                "parameter", "million", "billion",
+                "percent", "percentage", "amount",
+                "count", "number",
+            }
+        )
+
         if not question_groups:
             return json.dumps({"insufficient": True, "claims": []})
 
@@ -282,22 +324,40 @@ class ExtractiveMockLLM:
                 if not matched_groups:
                     continue
 
+                # For numeric questions, prefer sentences that directly
+                # connect an action or property to a quantity.
+                direct_quantity = bool(
+                    numeric_question
+                    and _DIRECT_QUANTITY_PATTERN.search(sentence)
+                )
+
+                # Penalize sentences explicitly discussing earlier work.
+                prior_work = bool(
+                    numeric_question
+                    and _PRIOR_WORK_PATTERN.search(sentence)
+                )
+
                 candidates.append({
                     "score": len(matched_groups) / len(question_groups),
                     "text": sentence,
                     "source": source_id,
                     "matched": len(matched_groups),
                     "groups": matched_groups,
+                    "direct_quantity": direct_quantity,
+                    "prior_work": prior_work,
                 })
 
         if not candidates:
             return json.dumps({"insufficient": True, "claims": []})
 
-        # Select only evidence sentences that contribute to the answer.
+        # Prefer direct quantity statements over historical comparisons.
+        # The original lexical coverage remains the primary criterion.
         candidates.sort(
             key=lambda item: (
                 -item["score"],
                 -item["matched"],
+                -int(item["direct_quantity"]),
+                int(item["prior_work"]),
                 len(item["text"]),
             )
         )
