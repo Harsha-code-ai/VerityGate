@@ -1,0 +1,131 @@
+
+# VerityGate - local stack for Docker Desktop (Windows/macOS/Linux).
+# First time: copy .env.example .env, then edit .env.
+# Start: docker compose up --build
+# Stop (keeps all data): docker compose stop
+# Start again: docker compose start
+#
+# Data lives in named volumes. Do NOT use `docker compose down -v`
+# unless you really want to erase uploaded documents, indexes and models.
+
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.12.4
+    restart: unless-stopped
+    volumes:
+      - qdrant_data:/qdrant/storage
+    ports:
+      - "127.0.0.1:${QDRANT_PORT:-6333}:6333"
+    healthcheck:
+      test: ["CMD-SHELL", "timeout 3 bash -c '</dev/tcp/127.0.0.1/6333' || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    stop_grace_period: 20s
+
+  backend:
+    build:
+      context: ./backend
+      target: runtime
+      args:
+        INSTALL_OCR: ${INSTALL_OCR:-true}
+    restart: unless-stopped
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATA_DIR: /data
+      QDRANT_URL: http://qdrant:6333
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://ollama:11434}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:8080}
+      OCR_ENABLED: ${OCR_ENABLED:-true}
+      PRELOAD_MODELS: ${PRELOAD_MODELS:-true}
+    volumes:
+      - app_data:/data
+      - hf_cache:/models
+    depends_on:
+      qdrant:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:${BACKEND_PORT:-8000}:8000"
+    stop_grace_period: 30s
+
+  frontend:
+    build: ./frontend
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "${FRONTEND_PORT:-8080}:80"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1/ || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+
+  # Fast deterministic unit tests:
+  # docker compose --profile test run --build --rm tests
+  tests:
+    build:
+      context: ./backend
+      target: test
+    profiles: ["test"]
+    # Intentionally do not load .env.
+    # Unit tests must use clean default settings.
+    environment:
+      HF_HOME: /models
+    volumes:
+      - hf_cache:/models
+
+  # Real evaluation using .env, OpenRouter, real embeddings and NLI:
+  # docker compose --profile evaluation run --build --rm evaluation
+  evaluation:
+    build:
+      context: ./backend
+      target: test
+    profiles: ["evaluation"]
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      HF_HOME: /models
+    volumes:
+      - hf_cache:/models
+      - ./evaluation-results:/reports
+    command:
+      - python
+      - -m
+      - evaluation.run
+      - --mode
+      - real
+      - --out
+      - /reports/real-evaluation.json
+
+  # Optional local LLM:
+  # docker compose --profile ollama up --build
+  ollama:
+    image: ollama/ollama:latest
+    profiles: ["ollama"]
+    restart: unless-stopped
+    volumes:
+      - ollama_data:/root/.ollama
+
+  # Optional experiment tracking:
+  # docker compose --profile mlflow up
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:latest
+    profiles: ["mlflow"]
+    command: mlflow server --host 0.0.0.0 --port 5000
+    volumes:
+      - mlflow_data:/mlruns
+    ports:
+      - "127.0.0.1:5000:5000"
+
+volumes:
+  qdrant_data:
+  app_data:
+  hf_cache:
+  ollama_data:
+  mlflow_data:

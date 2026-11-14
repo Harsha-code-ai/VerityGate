@@ -1,0 +1,88 @@
+
+# =====================================
+# ENVIRONMENT FILES AND SECRET KEYS
+# =====================================
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!**/.env.example
+
+# =====================================
+# PYTHON CACHE AND VIRTUAL ENVIRONMENTS
+# =====================================
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+
+# =====================================
+# PYTHON TESTING AND LINTING
+# =====================================
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# =====================================
+# NODE.JS AND REACT
+# =====================================
+node_modules/
+**/node_modules/
+frontend/dist/
+frontend/build/
+
+# =====================================
+# VS CODE HISTORY
+# =====================================
+.history/
+**/.history/
+
+# =====================================
+# LOCAL DATABASE FILES
+# =====================================
+*.sqlite
+*.sqlite3
+*.db
+
+# =====================================
+# LOCAL APPLICATION DATA
+# =====================================
+/data/
+backend/data/
+backend/uploads/
+uploads/
+qdrant_storage/
+
+# =====================================
+# MODEL AND EXPERIMENT CACHE
+# =====================================
+mlruns/
+.cache/
+hf_cache/
+
+# =====================================
+# LOGS AND TEMPORARY FILES
+# =====================================
+*.log
+*.tmp
+*.bak
+
+# =====================================
+# OPERATING SYSTEM FILES
+# =====================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =====================================
+# PRIVATE CERTIFICATES AND KEYS
+# =====================================
+*.pem
+*.key

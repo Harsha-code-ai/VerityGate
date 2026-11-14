@@ -1,0 +1,664 @@
+[
+ {
+  "id": "q01",
+  "doc": "company_report",
+  "kind": "exact",
+  "question": "When did the company open its Lisbon office?",
+  "answerable": true,
+  "expected_pages": [
+   1
+  ],
+  "expected_answer_contains": [
+   "15 June 2019"
+  ]
+ },
+ {
+  "id": "q02",
+  "doc": "company_report",
+  "kind": "paraphrase",
+  "question": "When did the Lisbon office start operating?",
+  "answerable": true,
+  "expected_pages": [
+   1
+  ],
+  "expected_answer_contains": [
+   "15 June 2019"
+  ]
+ },
+ {
+  "id": "q03",
+  "doc": "company_report",
+  "kind": "similar_terms",
+  "question": "When did the Madrid office open?",
+  "answerable": true,
+  "expected_pages": [
+   1
+  ],
+  "expected_answer_contains": [
+   "2021"
+  ]
+ },
+ {
+  "id": "q04",
+  "doc": "company_report",
+  "kind": "numeric",
+  "question": "How many people work in the Lisbon office?",
+  "answerable": true,
+  "expected_pages": [
+   1
+  ],
+  "expected_answer_contains": [
+   "120"
+  ]
+ },
+ {
+  "id": "q05",
+  "doc": "company_report",
+  "kind": "numeric",
+  "question": "What was the revenue increase from 2022 to 2023?",
+  "answerable": true,
+  "expected_pages": [
+   2
+  ],
+  "expected_answer_contains": [
+   "12.5"
+  ]
+ },
+ {
+  "id": "q06",
+  "doc": "company_report",
+  "kind": "numeric",
+  "question": "What was the revenue in 2023?",
+  "answerable": true,
+  "expected_pages": [
+   2
+  ],
+  "expected_answer_contains": [
+   "45 million"
+  ]
+ },
+ {
+  "id": "q07",
+  "doc": "company_report",
+  "kind": "paraphrase_hard",
+  "question": "By how much did CO2 output fall between 2020 and 2023?",
+  "answerable": true,
+  "expected_pages": [
+   3
+  ],
+  "expected_answer_contains": [
+   "30"
+  ],
+  "semantic": true
+ },
+ {
+  "id": "q08",
+  "doc": "company_report",
+  "kind": "exact",
+  "question": "What share of electricity came from renewable sources in 2023?",
+  "answerable": true,
+  "expected_pages": [
+   3
+  ],
+  "expected_answer_contains": [
+   "62"
+  ]
+ },
+ {
+  "id": "q09",
+  "doc": "company_report",
+  "kind": "multi_page",
+  "question": "Which offices does the company have and what was its 2023 revenue?",
+  "answerable": true,
+  "expected_pages": [
+   1,
+   2
+  ],
+  "expected_answer_contains": [
+   "Lisbon",
+   "45 million"
+  ]
+ },
+ {
+  "id": "q10",
+  "doc": "company_report",
+  "kind": "unanswerable",
+  "question": "When did the Tokyo office open?",
+  "answerable": false,
+  "expected_pages": [],
+  "expected_answer_contains": []
+ },
+ {
+  "id": "q11",
+  "doc": "company_report",
+  "kind": "unanswerable",
+  "question": "Who is the chief executive officer of the company?",
+  "answerable": false,
+  "expected_pages": [],
+  "expected_answer_contains": []
+ },
+ {
+  "id": "q12",
+  "doc": "financial_table",
+  "kind": "table",
+  "question": "What was Asia's revenue in 2023?",
+  "answerable": true,
+  "expected_pages": [
+   1
+  ],
+  "expected_answer_contains": [
+   "24.8"
+  ]
+ },
+ {
+  "id": "q13",
+  "doc": "financial_table",
+  "kind": "table",
+  "question": "What was the revenue of Europe in 2022?",
+  "answerable": true,
+  "expected_pages": [
+   1
+  ],
+  "expected_answer_contains": [
+   "38.2"
+  ]
+ },
+ {
+  "id": "q14",
+  "doc": "financial_table",
+  "kind": "numeric",
+  "question": "What was the group revenue in 2023?",
+  "answerable": true,
+  "expected_pages": [
+   1
+  ],
+  "expected_answer_contains": [
+   "82 million euros"
+  ]
+ },
+ {
+  "id": "q15",
+  "doc": "financial_table",
+  "kind": "exact",
+  "question": "In which currency are the amounts stated?",
+  "answerable": true,
+  "expected_pages": [
+   1
+  ],
+  "expected_answer_contains": [
+   "euro"
+  ]
+ },
+ {
+  "id": "q16",
+  "doc": "financial_table",
+  "kind": "exact",
+  "question": "What revenue growth does management expect for 2024?",
+  "answerable": true,
+  "expected_pages": [
+   2
+  ],
+  "expected_answer_contains": [
+   "5 percent"
+  ]
+ },
+ {
+  "id": "q17",
+  "doc": "financial_table",
+  "kind": "unanswerable",
+  "question": "What was the net profit in 2023?",
+  "answerable": false,
+  "expected_pages": [],
+  "expected_answer_contains": []
+ },
+ {
+  "id": "q18",
+  "doc": "research_paper",
+  "kind": "exact",
+  "question": "What accuracy did the proposed model reach?",
+  "answerable": true,
+  "expected_pages": [
+   1
+  ],
+  "expected_answer_contains": [
+   "91.4"
+  ]
+ },
+ {
+  "id": "q19",
+  "doc": "research_paper",
+  "kind": "numeric",
+  "question": "How many parameters does the model use?",
+  "answerable": true,
+  "expected_pages": [
+   1
+  ],
+  "expected_answer_contains": [
+   "3.2 million"
+  ]
+ },
+ {
+  "id": "q20",
+  "doc": "research_paper",
+  "kind": "numeric",
+  "question": "How many images are in the dataset?",
+  "answerable": true,
+  "expected_pages": [
+   2
+  ],
+  "expected_answer_contains": [
+   "12,000"
+  ]
+ },
+ {
+  "id": "q21",
+  "doc": "research_paper",
+  "kind": "numeric",
+  "question": "For how many epochs were the models trained?",
+  "answerable": true,
+  "expected_pages": [
+   2
+  ],
+  "expected_answer_contains": [
+   "40"
+  ]
+ },
+ {
+  "id": "q22",
+  "doc": "research_paper",
+  "kind": "similar_terms",
+  "question": "What accuracy did the baseline network reach?",
+  "answerable": true,
+  "expected_pages": [
+   2
+  ],
+  "expected_answer_contains": [
+   "88.9"
+  ]
+ },
+ {
+  "id": "q23",
+  "doc": "research_paper",
+  "kind": "exact",
+  "question": "What limitations does the study mention?",
+  "answerable": true,
+  "expected_pages": [
+   2
+  ],
+  "expected_answer_contains": [
+   "single dataset"
+  ]
+ },
+ {
+  "id": "q24",
+  "doc": "research_paper",
+  "kind": "exact",
+  "question": "What will future work study?",
+  "answerable": true,
+  "expected_pages": [
+   3
+  ],
+  "expected_answer_contains": [
+   "transformer"
+  ]
+ },
+ {
+  "id": "q25",
+  "doc": "research_paper",
+  "kind": "unanswerable",
+  "question": "Which GPU was used for training?",
+  "answerable": false,
+  "expected_pages": [],
+  "expected_answer_contains": []
+ },
+ {
+  "id": "q26",
+  "doc": "tech_manual",
+  "kind": "exact",
+  "question": "What power supply does the Router X200 use?",
+  "answerable": true,
+  "expected_pages": [
+   1
+  ],
+  "expected_answer_contains": [
+   "12 V"
+  ]
+ },
+ {
+  "id": "q27",
+  "doc": "tech_manual",
+  "kind": "similar_terms",
+  "question": "What power supply does the Router X300 use?",
+  "answerable": true,
+  "expected_pages": [
+   1
+  ],
+  "expected_answer_contains": [
+   "24 V"
+  ]
+ },
+ {
+  "id": "q28",
+  "doc": "tech_manual",
+  "kind": "exact",
+  "question": "What is the default management address?",
+  "answerable": true,
+  "expected_pages": [
+   1
+  ],
+  "expected_answer_contains": [
+   "192.168.10.1"
+  ]
+ },
+ {
+  "id": "q29",
+  "doc": "tech_manual",
+  "kind": "exact",
+  "question": "How long must the reset button be held to restore factory settings?",
+  "answerable": true,
+  "expected_pages": [
+   2
+  ],
+  "expected_answer_contains": [
+   "10 seconds"
+  ]
+ },
+ {
+  "id": "q30",
+  "doc": "tech_manual",
+  "kind": "paraphrase",
+  "question": "How long does the warranty last?",
+  "answerable": true,
+  "expected_pages": [
+   2
+  ],
+  "expected_answer_contains": [
+   "24 months"
+  ]
+ },
+ {
+  "id": "q31",
+  "doc": "tech_manual",
+  "kind": "similar_terms",
+  "question": "Which firmware version does the X300 ship with?",
+  "answerable": true,
+  "expected_pages": [
+   1
+  ],
+  "expected_answer_contains": [
+   "4.0.0"
+  ]
+ },
+ {
+  "id": "q32",
+  "doc": "tech_manual",
+  "kind": "unanswerable",
+  "question": "Which Wi-Fi frequency bands are supported?",
+  "answerable": false,
+  "expected_pages": [],
+  "expected_answer_contains": []
+ },
+ {
+  "id": "q33",
+  "doc": "assignment_brief",
+  "kind": "exact",
+  "question": "What is the word limit for the report?",
+  "answerable": true,
+  "expected_pages": [
+   1
+  ],
+  "expected_answer_contains": [
+   "2,500"
+  ]
+ },
+ {
+  "id": "q34",
+  "doc": "assignment_brief",
+  "kind": "exact",
+  "question": "When is the submission deadline?",
+  "answerable": true,
+  "expected_pages": [
+   1
+  ],
+  "expected_answer_contains": [
+   "14 November 2025"
+  ]
+ },
+ {
+  "id": "q35",
+  "doc": "assignment_brief",
+  "kind": "numeric",
+  "question": "What percentage of the final mark is this assessment worth?",
+  "answerable": true,
+  "expected_pages": [
+   1
+  ],
+  "expected_answer_contains": [
+   "40 percent"
+  ]
+ },
+ {
+  "id": "q36",
+  "doc": "assignment_brief",
+  "kind": "exact",
+  "question": "What is the penalty for late submissions?",
+  "answerable": true,
+  "expected_pages": [
+   2
+  ],
+  "expected_answer_contains": [
+   "10 percent"
+  ]
+ },
+ {
+  "id": "q37",
+  "doc": "assignment_brief",
+  "kind": "exact",
+  "question": "How do I submit the report?",
+  "answerable": true,
+  "expected_pages": [
+   1
+  ],
+  "expected_answer_contains": [
+   "course portal"
+  ]
+ },
+ {
+  "id": "q38",
+  "doc": "assignment_brief",
+  "kind": "unanswerable",
+  "question": "Who is the course coordinator?",
+  "answerable": false,
+  "expected_pages": [],
+  "expected_answer_contains": []
+ },
+ {
+  "id": "q39",
+  "doc": "conflicting_policy",
+  "kind": "conflict",
+  "question": "How many days per week can employees work remotely?",
+  "answerable": true,
+  "expected_pages": [
+   1,
+   3
+  ],
+  "expected_answer_contains": [
+   "3 days",
+   "2 days"
+  ],
+  "expects_conflict": true
+ },
+ {
+  "id": "q40",
+  "doc": "conflicting_policy",
+  "kind": "exact",
+  "question": "What equipment does the company provide to employees?",
+  "answerable": true,
+  "expected_pages": [
+   2
+  ],
+  "expected_answer_contains": [
+   "laptop"
+  ]
+ },
+ {
+  "id": "q41",
+  "doc": "conflicting_policy",
+  "kind": "exact",
+  "question": "Which days are the core office days?",
+  "answerable": true,
+  "expected_pages": [
+   3
+  ],
+  "expected_answer_contains": [
+   "Tuesday"
+  ]
+ },
+ {
+  "id": "q42",
+  "doc": "scanned_memo",
+  "kind": "scanned",
+  "question": "What budget did the board approve?",
+  "answerable": true,
+  "expected_pages": [
+   1
+  ],
+  "expected_answer_contains": [
+   "2.4 million"
+  ],
+  "needs_ocr": true
+ },
+ {
+  "id": "q43",
+  "doc": "scanned_memo",
+  "kind": "scanned",
+  "question": "Who is the project manager?",
+  "answerable": true,
+  "expected_pages": [
+   1
+  ],
+  "expected_answer_contains": [
+   "Elena Marsh"
+  ],
+  "needs_ocr": true
+ },
+ {
+  "id": "q44",
+  "doc": "scanned_memo",
+  "kind": "scanned",
+  "question": "When did the board approve the budget?",
+  "answerable": true,
+  "expected_pages": [
+   1
+  ],
+  "expected_answer_contains": [
+   "9 March 2022"
+  ],
+  "needs_ocr": true
+ },
+ {
+  "id": "q45",
+  "doc": "long_report",
+  "kind": "long",
+  "question": "How many safety incidents did Station Delta record?",
+  "answerable": true,
+  "expected_pages": [
+   7
+  ],
+  "expected_answer_contains": [
+   "417"
+  ]
+ },
+ {
+  "id": "q46",
+  "doc": "long_report",
+  "kind": "long",
+  "question": "Where was the central depot relocated to?",
+  "answerable": true,
+  "expected_pages": [
+   23
+  ],
+  "expected_answer_contains": [
+   "Harbour Road"
+  ]
+ },
+ {
+  "id": "q47",
+  "doc": "long_report",
+  "kind": "long",
+  "question": "How large is the contingency reserve approved by the audit committee?",
+  "answerable": true,
+  "expected_pages": [
+   38
+  ],
+  "expected_answer_contains": [
+   "3.5 million"
+  ]
+ },
+ {
+  "id": "q48",
+  "doc": "long_report",
+  "kind": "unanswerable",
+  "question": "Who chairs the audit committee?",
+  "answerable": false,
+  "expected_pages": [],
+  "expected_answer_contains": []
+ },
+ {
+  "id": "q49",
+  "doc": "incomplete_info",
+  "kind": "exact",
+  "question": "When is the bakery open?",
+  "answerable": true,
+  "expected_pages": [
+   1
+  ],
+  "expected_answer_contains": [
+   "7 am"
+  ]
+ },
+ {
+  "id": "q50",
+  "doc": "incomplete_info",
+  "kind": "exact",
+  "question": "What does the bakery sell?",
+  "answerable": true,
+  "expected_pages": [
+   1
+  ],
+  "expected_answer_contains": [
+   "sourdough"
+  ]
+ },
+ {
+  "id": "q51",
+  "doc": "incomplete_info",
+  "kind": "paraphrase",
+  "question": "How far in advance must large event orders be placed?",
+  "answerable": true,
+  "expected_pages": [
+   1
+  ],
+  "expected_answer_contains": [
+   "three days"
+  ]
+ },
+ {
+  "id": "q52",
+  "doc": "incomplete_info",
+  "kind": "unanswerable",
+  "question": "How much does a croissant cost?",
+  "answerable": false,
+  "expected_pages": [],
+  "expected_answer_contains": []
+ },
+ {
+  "id": "q53",
+  "doc": "incomplete_info",
+  "kind": "unanswerable",
+  "question": "Does the bakery offer home delivery?",
+  "answerable": false,
+  "expected_pages": [],
+  "expected_answer_contains": []
+ }
+]

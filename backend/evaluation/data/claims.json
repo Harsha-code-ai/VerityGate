@@ -1,0 +1,554 @@
+[
+ {
+  "id": "c01",
+  "doc": "company_report",
+  "claim": "The Lisbon office opened on 15 June 2019.",
+  "expected": "SUPPORTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "supported"
+ },
+ {
+  "id": "c02",
+  "doc": "company_report",
+  "claim": "The Lisbon office employs 120 people.",
+  "expected": "SUPPORTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "supported"
+ },
+ {
+  "id": "c03",
+  "doc": "company_report",
+  "claim": "Revenue increased by 12.5% from 2022 to 2023.",
+  "expected": "SUPPORTED",
+  "expected_pages": [
+   2
+  ],
+  "kind": "supported_numeric"
+ },
+ {
+  "id": "c04",
+  "doc": "company_report",
+  "claim": "The company's revenue in 2023 was 45 million US dollars.",
+  "expected": "SUPPORTED",
+  "expected_pages": [
+   2
+  ],
+  "kind": "supported_numeric"
+ },
+ {
+  "id": "c05",
+  "doc": "company_report",
+  "claim": "Net profit reached 6.1 million US dollars.",
+  "expected": "SUPPORTED",
+  "expected_pages": [
+   2
+  ],
+  "kind": "supported_numeric"
+ },
+ {
+  "id": "c06",
+  "doc": "company_report",
+  "claim": "The Lisbon office opened on 16 June 2019.",
+  "expected": "CONTRADICTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "contradicted_date"
+ },
+ {
+  "id": "c07",
+  "doc": "company_report",
+  "claim": "The Lisbon office opened in 2021.",
+  "expected": "CONTRADICTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "contradicted_date"
+ },
+ {
+  "id": "c08",
+  "doc": "company_report",
+  "claim": "Revenue increased by 125% from 2022 to 2023.",
+  "expected": "CONTRADICTED",
+  "expected_pages": [
+   2
+  ],
+  "kind": "contradicted_numeric"
+ },
+ {
+  "id": "c09",
+  "doc": "company_report",
+  "claim": "The company's revenue in 2023 was 45 million euros.",
+  "expected": "CONTRADICTED",
+  "expected_pages": [
+   2
+  ],
+  "kind": "contradicted_currency"
+ },
+ {
+  "id": "c10",
+  "doc": "company_report",
+  "claim": "The Madrid office employs 120 people.",
+  "expected": "CONTRADICTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "unrelated_number"
+ },
+ {
+  "id": "c11",
+  "doc": "company_report",
+  "claim": "The company opened a Tokyo office in 2020.",
+  "expected": "NOT_ESTABLISHED",
+  "expected_pages": [],
+  "kind": "missing_evidence"
+ },
+ {
+  "id": "c12",
+  "doc": "company_report",
+  "claim": "Net profit in 2022 was 5 million US dollars.",
+  "expected": "NOT_ESTABLISHED",
+  "expected_pages": [],
+  "kind": "period_mismatch"
+ },
+ {
+  "id": "c13",
+  "doc": "company_report",
+  "claim": "The Lisbon office employs 200 engineers.",
+  "expected": "NOT_ESTABLISHED",
+  "expected_pages": [],
+  "kind": "missing_evidence"
+ },
+ {
+  "id": "c14",
+  "doc": "company_report",
+  "claim": "The company never opened an office in Lisbon.",
+  "expected": "CONTRADICTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "negation",
+  "semantic": true
+ },
+ {
+  "id": "c15",
+  "doc": "financial_table",
+  "claim": "Asia's revenue in 2023 was 24.8.",
+  "expected": "SUPPORTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "table"
+ },
+ {
+  "id": "c16",
+  "doc": "financial_table",
+  "claim": "Europe's revenue in 2022 was 38.2.",
+  "expected": "SUPPORTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "table"
+ },
+ {
+  "id": "c17",
+  "doc": "financial_table",
+  "claim": "Group revenue was 82 million euros in 2023.",
+  "expected": "SUPPORTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "supported_numeric"
+ },
+ {
+  "id": "c18",
+  "doc": "financial_table",
+  "claim": "Group revenue was 82 million dollars in 2023.",
+  "expected": "CONTRADICTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "contradicted_currency"
+ },
+ {
+  "id": "c19",
+  "doc": "financial_table",
+  "claim": "The operating margin was 9%.",
+  "expected": "SUPPORTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "supported_numeric"
+ },
+ {
+  "id": "c20",
+  "doc": "financial_table",
+  "claim": "The operating margin was 90 percent.",
+  "expected": "CONTRADICTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "contradicted_numeric"
+ },
+ {
+  "id": "c21",
+  "doc": "financial_table",
+  "claim": "Group revenue was 95 million euros in 2024.",
+  "expected": "NOT_ESTABLISHED",
+  "expected_pages": [],
+  "kind": "period_mismatch"
+ },
+ {
+  "id": "c22",
+  "doc": "financial_table",
+  "claim": "Asia's revenue in 2023 was 24.8 million euros.",
+  "expected": "NOT_ESTABLISHED",
+  "expected_pages": [],
+  "kind": "known_limitation_table_units"
+ },
+ {
+  "id": "c23",
+  "doc": "research_paper",
+  "claim": "The proposed model reaches 91.4 percent accuracy on the test set.",
+  "expected": "SUPPORTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "supported_numeric"
+ },
+ {
+  "id": "c24",
+  "doc": "research_paper",
+  "claim": "The model uses 3.2 million parameters.",
+  "expected": "SUPPORTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "supported_numeric"
+ },
+ {
+  "id": "c25",
+  "doc": "research_paper",
+  "claim": "The dataset contains 12,000 labelled images across 10 classes.",
+  "expected": "SUPPORTED",
+  "expected_pages": [
+   2
+  ],
+  "kind": "supported_numeric"
+ },
+ {
+  "id": "c26",
+  "doc": "research_paper",
+  "claim": "The baseline network reached 91.4 percent accuracy.",
+  "expected": "CONTRADICTED",
+  "expected_pages": [
+   2
+  ],
+  "kind": "unrelated_number"
+ },
+ {
+  "id": "c27",
+  "doc": "research_paper",
+  "claim": "The models were trained for 400 epochs.",
+  "expected": "CONTRADICTED",
+  "expected_pages": [
+   2
+  ],
+  "kind": "contradicted_numeric"
+ },
+ {
+  "id": "c28",
+  "doc": "research_paper",
+  "claim": "The pruned network is 4 times smaller than the baseline and 25 percent more accurate.",
+  "expected": "CONTRADICTED",
+  "expected_pages": [
+   2
+  ],
+  "kind": "contradicted_numeric"
+ },
+ {
+  "id": "c29",
+  "doc": "research_paper",
+  "claim": "The models were trained on a GPU cluster.",
+  "expected": "NOT_ESTABLISHED",
+  "expected_pages": [],
+  "kind": "missing_evidence"
+ },
+ {
+  "id": "c30",
+  "doc": "tech_manual",
+  "claim": "The Router X200 uses a 12 V power supply.",
+  "expected": "SUPPORTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "supported_numeric"
+ },
+ {
+  "id": "c31",
+  "doc": "tech_manual",
+  "claim": "The Router X200 uses a 24 V power supply.",
+  "expected": "CONTRADICTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "similar_entity"
+ },
+ {
+  "id": "c32",
+  "doc": "tech_manual",
+  "claim": "The Router X300 uses a 24 V power supply.",
+  "expected": "SUPPORTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "similar_entity"
+ },
+ {
+  "id": "c33",
+  "doc": "tech_manual",
+  "claim": "The default management address is 192.168.1.1.",
+  "expected": "CONTRADICTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "contradicted_code"
+ },
+ {
+  "id": "c34",
+  "doc": "tech_manual",
+  "claim": "The Router X300 ships with firmware version 3.2.1.",
+  "expected": "CONTRADICTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "contradicted_code"
+ },
+ {
+  "id": "c35",
+  "doc": "tech_manual",
+  "claim": "The warranty period is 24 months from the date of purchase.",
+  "expected": "SUPPORTED",
+  "expected_pages": [
+   2
+  ],
+  "kind": "supported_numeric"
+ },
+ {
+  "id": "c36",
+  "doc": "tech_manual",
+  "claim": "The warranty period is 12 months from the date of purchase.",
+  "expected": "CONTRADICTED",
+  "expected_pages": [
+   2
+  ],
+  "kind": "contradicted_numeric"
+ },
+ {
+  "id": "c37",
+  "doc": "tech_manual",
+  "claim": "Holding the reset button for 10 seconds restores the factory settings.",
+  "expected": "SUPPORTED",
+  "expected_pages": [
+   2
+  ],
+  "kind": "supported",
+  "semantic": true
+ },
+ {
+  "id": "c38",
+  "doc": "assignment_brief",
+  "claim": "The assessment is worth 40 percent of the final mark.",
+  "expected": "SUPPORTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "supported_numeric"
+ },
+ {
+  "id": "c39",
+  "doc": "assignment_brief",
+  "claim": "The assessment is worth 50 percent of the final mark.",
+  "expected": "CONTRADICTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "contradicted_numeric"
+ },
+ {
+  "id": "c40",
+  "doc": "assignment_brief",
+  "claim": "The submission deadline is 14 November 2025.",
+  "expected": "SUPPORTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "supported_date"
+ },
+ {
+  "id": "c41",
+  "doc": "assignment_brief",
+  "claim": "The submission deadline is 15 November 2025.",
+  "expected": "CONTRADICTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "contradicted_date"
+ },
+ {
+  "id": "c42",
+  "doc": "assignment_brief",
+  "claim": "A penalty of 10 percent of the available marks applies for each late day.",
+  "expected": "SUPPORTED",
+  "expected_pages": [
+   2
+  ],
+  "kind": "supported_numeric"
+ },
+ {
+  "id": "c43",
+  "doc": "assignment_brief",
+  "claim": "Students may submit the report by email.",
+  "expected": "NOT_ESTABLISHED",
+  "expected_pages": [],
+  "kind": "missing_evidence",
+  "semantic": true
+ },
+ {
+  "id": "c44",
+  "doc": "conflicting_policy",
+  "claim": "Employees may work remotely 3 days per week.",
+  "expected": "NOT_ESTABLISHED",
+  "expected_pages": [
+   1,
+   3
+  ],
+  "kind": "document_conflict",
+  "expects_conflict": true
+ },
+ {
+  "id": "c45",
+  "doc": "conflicting_policy",
+  "claim": "The company provides a laptop and a monitor to every employee.",
+  "expected": "SUPPORTED",
+  "expected_pages": [
+   2
+  ],
+  "kind": "supported"
+ },
+ {
+  "id": "c46",
+  "doc": "scanned_memo",
+  "claim": "The board approved a budget of 2.4 million dollars on 9 March 2022.",
+  "expected": "SUPPORTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "scanned",
+  "needs_ocr": true
+ },
+ {
+  "id": "c47",
+  "doc": "scanned_memo",
+  "claim": "The board approved a budget of 4.2 million dollars.",
+  "expected": "CONTRADICTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "scanned",
+  "needs_ocr": true
+ },
+ {
+  "id": "c48",
+  "doc": "scanned_memo",
+  "claim": "The project manager is Elena Marsh.",
+  "expected": "SUPPORTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "scanned",
+  "needs_ocr": true
+ },
+ {
+  "id": "c49",
+  "doc": "scanned_memo",
+  "claim": "Construction will start in the spring.",
+  "expected": "CONTRADICTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "scanned",
+  "needs_ocr": true,
+  "semantic": true
+ },
+ {
+  "id": "c50",
+  "doc": "long_report",
+  "claim": "Station Delta recorded 417 safety incidents during the year.",
+  "expected": "SUPPORTED",
+  "expected_pages": [
+   7
+  ],
+  "kind": "long"
+ },
+ {
+  "id": "c51",
+  "doc": "long_report",
+  "claim": "Station Delta recorded 471 safety incidents during the year.",
+  "expected": "CONTRADICTED",
+  "expected_pages": [
+   7
+  ],
+  "kind": "long"
+ },
+ {
+  "id": "c52",
+  "doc": "long_report",
+  "claim": "The central depot was relocated to Harbour Road in September 2021.",
+  "expected": "SUPPORTED",
+  "expected_pages": [
+   23
+  ],
+  "kind": "long"
+ },
+ {
+  "id": "c53",
+  "doc": "long_report",
+  "claim": "The central depot was relocated to Harbour Road in October 2021.",
+  "expected": "CONTRADICTED",
+  "expected_pages": [
+   23
+  ],
+  "kind": "long"
+ },
+ {
+  "id": "c54",
+  "doc": "incomplete_info",
+  "claim": "Corner Bakery is open from 7 am to 6 pm on weekdays.",
+  "expected": "SUPPORTED",
+  "expected_pages": [
+   1
+  ],
+  "kind": "supported_numeric"
+ },
+ {
+  "id": "c55",
+  "doc": "incomplete_info",
+  "claim": "A croissant costs 3 dollars.",
+  "expected": "NOT_ESTABLISHED",
+  "expected_pages": [],
+  "kind": "missing_evidence"
+ },
+ {
+  "id": "c56",
+  "doc": "incomplete_info",
+  "claim": "The bakery delivers orders to customers.",
+  "expected": "NOT_ESTABLISHED",
+  "expected_pages": [],
+  "kind": "missing_evidence"
+ }
+]

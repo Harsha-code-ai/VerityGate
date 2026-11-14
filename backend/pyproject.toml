@@ -1,0 +1,6 @@
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-m 'not real_models'"
+markers = ["real_models: needs the real embedding/NLI models (downloaded from Hugging Face); run with `pytest -m real_models`"]
+filterwarnings = ["ignore::UserWarning:app.vectorstore"]

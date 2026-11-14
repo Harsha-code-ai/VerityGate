@@ -1,0 +1,4 @@
+# Model libraries (large). NOT verified in the build sandbox (no model downloads possible there).
+# Install CPU-only torch first:  pip install torch --index-url https://download.pytorch.org/whl/cpu
+sentence-transformers>=3.0,<6
+transformers>=4.44,<6
