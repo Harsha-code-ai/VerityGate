@@ -142,7 +142,7 @@ def _ingest(svc: Services, doc_id: str) -> None:
         except Exception:
             pass
         svc.db.execute("DELETE FROM chunks WHERE doc_id=?", (doc_id,))
-        detail = f" {str(exc)[:160]}" if isinstance(exc, RuntimeError) else ""
+        detail = f" {str(exc)[:200]}" if str(exc) else ""
         fail(f"Indexing failed ({type(exc).__name__}).{detail} Check that Qdrant is running and the embedding model could be loaded; see the backend logs.")
 
 
